@@ -6,17 +6,30 @@ const rpsArray = ["rock", "paper", "scissors"];
 function computerPlay(){
     return rpsArray[Math.floor(Math.random() * rpsArray.length)]
     
-}
+} 
 
-// declare playerSelection & test against computerSelection
+function playerPlay(){
+    return rpsArray[Math.floor(Math.random() * rpsArray.length)]
+    
+} 
+
+// declare playerSelection & test against computerSlection
 // TODO: allow playerSelection to be chosen without declaring its value
-const playerSelection = "rock";
+// const playerSelection = "rock";
 const computerSelection = computerPlay();
+const playerSelection = playerPlay();
 
+let result;
+// let playerSelection = "rock";
 function playRound(playerSelection, computerSelection){
-    // player win conditions (use if/else):
-    // player rock & computer scissors || player scissors & computer paper ||
-    // player paper & computer rock || && =/= computerSelection THEN "You win!"
+    computerSelection = computerPlay().toLowerCase;
+    playerSelection = playerPlay().toLowerCase;
+    // playerSelection = playerSelection.toLowerCase();
+    // let computerSelection = computerPlay();
+    // let result = ""
+    // playerSelection win conditions (use if/else):
+    // playerSelection rock & computerSeletion scissors || playerSelection scissors & computerSeletion paper ||
+    // playerSelection paper & computerSelction rock || && =/= computerSelction THEN "You win!"
     // ELSE "You lose!"
     
     // Remember: create scorekeeping variables that are NOT constant: "let x = 0"
@@ -24,14 +37,23 @@ function playRound(playerSelection, computerSelection){
     // use console to test w/o UI
 
     // computer win conditions * && =/= playerSelection 
+
+    // 
+
+    if ((playerSelection == "rock" && computerSelection == "scissors") ||
+        (playerSelection == "scissors" && computerSelection == "paper") ||
+        (playerSelection == "paper" && computerSelection == "rock")) {
+        result = ("You win!");
+        } else if (playerSelection == computerSelection){
+        result = ("It's a draw!");
+    } else {
+        result = ("You lose!");
+    }
+            console.log(result)
+        }
+
     
-    
-}
-
-
-
-function game(){
     playRound();
-}
-
-console.log(playRound);
+    console.log(playerSelection);
+    console.log(computerSelection);
+    console.log(result);
