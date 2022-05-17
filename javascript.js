@@ -8,52 +8,37 @@ function computerPlay(){
     
 } 
 
-function playerPlay(){
-    return rpsArray[Math.floor(Math.random() * rpsArray.length)]
-    
-} 
-
-// declare playerSelection & test against computerSlection
 // TODO: allow playerSelection to be chosen without declaring its value
 // const playerSelection = "rock";
-const computerSelection = computerPlay();
-const playerSelection = playerPlay();
+
+// const playerSelection = playerPlay();
 
 let result;
+let computerScore = 0;
+let playerScore = 0;
+// let playerSelection = window.prompt("Choose");
 // let playerSelection = "rock";
-function playRound(playerSelection, computerSelection){
-    computerSelection = computerPlay().toLowerCase;
-    playerSelection = playerPlay().toLowerCase;
-    // playerSelection = playerSelection.toLowerCase();
-    // let computerSelection = computerPlay();
-    // let result = ""
-    // playerSelection win conditions (use if/else):
-    // playerSelection rock & computerSeletion scissors || playerSelection scissors & computerSeletion paper ||
-    // playerSelection paper & computerSelction rock || && =/= computerSelction THEN "You win!"
-    // ELSE "You lose!"
-    
-    // Remember: create scorekeeping variables that are NOT constant: "let x = 0"
-    // increment +1 to winner after each round
-    // use console to test w/o UI
-
-    // computer win conditions * && =/= playerSelection 
-
-    // 
-
+function playRound(){
+    let playerSelection = window.prompt("Choose").toLowerCase;
+    let computerSelection = computerPlay().toLowerCase;
     if ((playerSelection == "rock" && computerSelection == "scissors") ||
         (playerSelection == "scissors" && computerSelection == "paper") ||
         (playerSelection == "paper" && computerSelection == "rock")) {
+            playerScore += 1; 
         result = ("You win!");
         } else if (playerSelection == computerSelection){
         result = ("It's a draw!");
     } else {
+        computerScore += 1;
         result = ("You lose!");
     }
-            console.log(result)
-        }
-
     
-    playRound();
+    console.log(result)
     console.log(playerSelection);
     console.log(computerSelection);
-    console.log(result);
+    console.log(playerScore);
+    console.log(computerScore);
+        }
+// }
+    
+    playRound();
