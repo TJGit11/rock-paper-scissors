@@ -43,19 +43,28 @@ function playRound(){
 
 function game(){
 
+    // if player or computer reaches 3, end game. how?
+
     for (let i = 0; i < 5; i++){
-        if (playerScore == 3){
-            playerScore += 1;
+        if (playerScore == 2){
+            // playerScore += 1;
             console.log("You're the winner!");
-            console.log(playerScore);
-        } else if(computerScore == 3){
+            // console.log(playerScore);
+        } else if(computerScore == 2){
+            // computerScore +=1;
             console.log("Computer wins!");
-            console.log(computerScore);
+            // console.log(computerScore);
         }
         playRound();
     }
 
     }
+// function gameOver(){
+    // if playerScore == 3 OR computerScore == 3
+    // message = You have won / Computer has won
+    // "play again?"
+    // playRound(); or different function?
+// }
     
 
 
