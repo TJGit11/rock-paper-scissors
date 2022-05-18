@@ -11,34 +11,59 @@ function computerPlay(){
 // TODO: allow playerSelection to be chosen without declaring its value
 // const playerSelection = "rock";
 
-// const playerSelection = playerPlay();
+// const playerSelection = playerPlay();`
 
 let result;
 let computerScore = 0;
 let playerScore = 0;
-// let playerSelection = window.prompt("Choose");
-// let playerSelection = "rock";
+
 function playRound(){
-    let playerSelection = window.prompt("Choose").toLowerCase;
-    let computerSelection = computerPlay().toLowerCase;
+    let playerSelection = window.prompt("Choose");
+    let computerSelection = computerPlay();
     if ((playerSelection == "rock" && computerSelection == "scissors") ||
         (playerSelection == "scissors" && computerSelection == "paper") ||
         (playerSelection == "paper" && computerSelection == "rock")) {
             playerScore += 1; 
-        result = ("You win!");
+        result = ("You win this round!");
         } else if (playerSelection == computerSelection){
-        result = ("It's a draw!");
+        result = ("This round is a draw!");
     } else {
         computerScore += 1;
-        result = ("You lose!");
+        result = ("You lose this round!");
+    } 
+    return result;
+    
+    // console.log(result)
+    // console.log(playerSelection);
+    // console.log(computerSelection);
+    // console.log(playerScore);
+    // console.log(computerScore);
+}
+
+
+function game(){
+
+    for (let i = 0; i < 5; i++){
+        if (playerScore == 3){
+            playerScore += 1;
+            console.log("You're the winner!");
+            console.log(playerScore);
+        } else if(computerScore == 3){
+            console.log("Computer wins!");
+            console.log(computerScore);
+        }
+        playRound();
+    }
+
     }
     
-    console.log(result)
-    console.log(playerSelection);
-    console.log(computerSelection);
-    console.log(playerScore);
-    console.log(computerScore);
-        }
-// }
+
+
+game();
+console.log(result);
+console.log(playerScore);
+console.log(computerScore);
+
     
-    playRound();
+    
+    
