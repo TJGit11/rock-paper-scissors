@@ -2,6 +2,22 @@
 //creates an array containing these strings
 const rpsArray = ["rock", "paper", "scissors"];
 
+const btnR = document.querySelector('#btnR')
+btnR.addEventListener('click', () => {
+    alert("Rock has been chosen");
+});
+
+const btnP = document.querySelector('#btnP')
+btnP.addEventListener('click', () => {
+    alert("Paper has been chosen");
+});
+
+const btnS = document.querySelector('#btnS')
+btnS.addEventListener('click', () => {
+    alert("Scissors has been chosen");
+});
+
+
 // returns a random value in the array
 function computerPlay(){
     return rpsArray[Math.floor(Math.random() * rpsArray.length)]
@@ -59,13 +75,7 @@ function game(){
     }
 
     }
-// function gameOver(){
-    // if playerScore == 3 OR computerScore == 3
-    // message = You have won / Computer has won
-    // "play again?"
-    // playRound(); or different function?
-// }
-    // test/
+
 
 
 game();
