@@ -31,7 +31,7 @@ let computerScore = 0;
 let playerScore = 0;
 
 function playRound(){
-    // let playerSelection = window.prompt("Choose");
+    let playerSelection = window.prompt("Choose");
     let computerSelection = computerPlay();
     if ((playerSelection == "rock" && computerSelection == "scissors") ||
         (playerSelection == "scissors" && computerSelection == "paper") ||
@@ -53,7 +53,7 @@ function playRound(){
 function game(){
 
     for (let i = 0; i < 5; i++){
-        if (playerScore == 3){
+        if (playerScore == 3) {
             console.log("You're the winner!");
         } else if(computerScore == 3){
             console.log("Computer wins!");
@@ -63,6 +63,7 @@ function game(){
 
     }
 
+playRound()
 
 
 game();
