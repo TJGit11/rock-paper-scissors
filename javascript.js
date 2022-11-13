@@ -1,4 +1,7 @@
 
+let result;
+let computerScore = 0;
+let playerScore = 0;
 //creates an array containing these strings
 const rpsArray = ["rock", "paper", "scissors"];
 
@@ -20,8 +23,7 @@ const rpsArray = ["rock", "paper", "scissors"];
 const buttons = document.querySelectorAll('button')
 buttons.forEach(button => {
     button.addEventListener('click', (e) => {
-        playRound(e.target.value)
-        console.log(e.target.value)
+        playRound(button.value)
     })
 })
 
@@ -33,12 +35,12 @@ function computerPlay(){
 
 
 
-let result;
-let computerScore = 0;
-let playerScore = 0;
+// let result;
+// let computerScore = 0;
+// let playerScore = 0;
 
 function playRound(playerSelection){
-    
+    // let playerSelection = e.target.value
     let computerSelection = computerPlay();
     if ((playerSelection == "rock" && computerSelection == "scissors") ||
         (playerSelection == "scissors" && computerSelection == "paper") ||
@@ -57,23 +59,23 @@ function playRound(playerSelection){
 }
 
 
-function game(){
+// function game(){
 
-    for (let i = 0; i < 6; i++){
-        if (playerScore == 5) {
-            console.log("You're the winner!");
-        } else if(computerScore == 5){
-            console.log("Computer wins!");
-        }
-        playRound();
-    }
+//     for (let i = 0; i < 6; i++){
+//         if (playerScore == 5) {
+//             console.log("You're the winner!");
+//         } else if(computerScore == 5){
+//             console.log("Computer wins!");
+//         }
+//         playRound();
+//     }
 
-    }
+//     }
 
 playRound()
 
 
-game();
+// game();
 console.log(result);
 console.log(playerScore);
 console.log(computerScore);
