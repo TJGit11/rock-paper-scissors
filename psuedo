@@ -1,0 +1,3 @@
+Refactor code to use result of button click as playerSelection
+    event
+Change console messages to DOM banners

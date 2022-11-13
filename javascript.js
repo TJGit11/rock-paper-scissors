@@ -2,21 +2,28 @@
 //creates an array containing these strings
 const rpsArray = ["rock", "paper", "scissors"];
 
-const btnR = document.querySelector('#btnR')
-btnR.addEventListener('click', () => {
-    alert("Rock has been chosen");
-});
+// const btnR = document.querySelector('#btnR')
+// btnR.addEventListener('click', () => {
+//     alert("Rock has been chosen");
+// });
 
-const btnP = document.querySelector('#btnP')
-btnP.addEventListener('click', () => {
-    alert("Paper has been chosen");
-});
+// const btnP = document.querySelector('#btnP')
+// btnP.addEventListener('click', () => {
+//     alert("Paper has been chosen");
+// });
 
-const btnS = document.querySelector('#btnS')
-btnS.addEventListener('click', () => {
-    alert("Scissors has been chosen");
-});
+// const btnS = document.querySelector('#btnS')
+// btnS.addEventListener('click', () => {
+//     alert("Scissors");
+// });
 
+const buttons = document.querySelectorAll('button')
+buttons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        playRound(e.target.value)
+        console.log(e.target.value)
+    })
+})
 
 // returns a random value in the array
 function computerPlay(){
@@ -30,8 +37,8 @@ let result;
 let computerScore = 0;
 let playerScore = 0;
 
-function playRound(){
-    let playerSelection = window.prompt("Choose");
+function playRound(playerSelection){
+    
     let computerSelection = computerPlay();
     if ((playerSelection == "rock" && computerSelection == "scissors") ||
         (playerSelection == "scissors" && computerSelection == "paper") ||
@@ -52,10 +59,10 @@ function playRound(){
 
 function game(){
 
-    for (let i = 0; i < 5; i++){
-        if (playerScore == 3) {
+    for (let i = 0; i < 6; i++){
+        if (playerScore == 5) {
             console.log("You're the winner!");
-        } else if(computerScore == 3){
+        } else if(computerScore == 5){
             console.log("Computer wins!");
         }
         playRound();
