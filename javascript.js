@@ -1,7 +1,3 @@
-
-let result;
-let computerScore = 0;
-let playerScore = 0;
 //creates an array containing these strings
 const rpsArray = ["rock", "paper", "scissors"];
 
@@ -20,12 +16,22 @@ const rpsArray = ["rock", "paper", "scissors"];
 //     alert("Scissors");
 // });
 
+// document.getElementById("button").onclick = function () { myFunction() };
+// function myFunction() {
+//     document.getElementById("button").innerHTML = 
+// }
+
 const buttons = document.querySelectorAll('button')
 buttons.forEach(button => {
     button.addEventListener('click', (e) => {
         playRound(button.value)
+        console.log(playRound())
     })
 })
+
+function choice() {
+    document.getElementById("").value 
+}
 
 // returns a random value in the array
 function computerPlay(){
@@ -35,27 +41,27 @@ function computerPlay(){
 
 
 
-// let result;
-// let computerScore = 0;
-// let playerScore = 0;
+let result;
+let computerScore = 0;
+let playerScore = 0;
 
-function playRound(playerSelection){
+function playRound(playerSelection) {
     // let playerSelection = e.target.value
     let computerSelection = computerPlay();
-    if ((playerSelection == "rock" && computerSelection == "scissors") ||
-        (playerSelection == "scissors" && computerSelection == "paper") ||
-        (playerSelection == "paper" && computerSelection == "rock")) {
-            playerScore += 1; 
-        result = ("You win this round!");
-        } else if (playerSelection == computerSelection){
-        result = ("This round is a draw!");
-    } else {
-        computerScore += 1;
-        result = ("You lose this round!");
-    } 
-    return result;
-    
-
+    while (playerScore < 5 || computerScore < 5) {
+        if ((playerSelection == "rock" && computerSelection == "scissors") ||
+            (playerSelection == "scissors" && computerSelection == "paper") ||
+            (playerSelection == "paper" && computerSelection == "rock")) {
+            playerScore += 1;
+            result = ("You win this round!");
+        } else if (playerSelection == computerSelection) {
+            result = ("This round is a draw!");
+        } else {
+            computerScore += 1;
+            result = ("You lose this round!");
+        }
+        return result;
+    }
 }
 
 
