@@ -11,11 +11,15 @@ buttons.forEach(button => {
     })
 })
 
+// function endGame() {
+//     if (playerScore == 5 || computerScore == 5) {
+//         document.querySelectorAll('button').disabled = true;
+//     }
+// }
 
 // returns a random value in the array
 function computerPlay(){
     return rpsArray[Math.floor(Math.random() * rpsArray.length)]
-    
 } 
 
 let result;
@@ -40,13 +44,19 @@ function playRound(playerSelection) {
             
             if (computerScore == 5) {
                 result = ("Computer Wins")
+                endGame();
+            } else if (playerScore == 5) {
+                result = ("You won the game!");
+                endGame();
+
             }
         }
         return result;
     }
 
 
-playRound()
+playRound();
+
 
 
 
