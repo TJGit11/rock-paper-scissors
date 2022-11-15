@@ -1,37 +1,16 @@
 //creates an array containing these strings
 const rpsArray = ["rock", "paper", "scissors"];
 
-// const btnR = document.querySelector('#btnR')
-// btnR.addEventListener('click', () => {
-//     alert("Rock has been chosen");
-// });
-
-// const btnP = document.querySelector('#btnP')
-// btnP.addEventListener('click', () => {
-//     alert("Paper has been chosen");
-// });
-
-// const btnS = document.querySelector('#btnS')
-// btnS.addEventListener('click', () => {
-//     alert("Scissors");
-// });
-
-// document.getElementById("button").onclick = function () { myFunction() };
-// function myFunction() {
-//     document.getElementById("button").innerHTML = 
-// }
-
 const buttons = document.querySelectorAll('button')
+
 buttons.forEach(button => {
     button.addEventListener('click', (e) => {
-        playRound(button.value)
-        console.log(playRound())
+        // playRound(button.value)
+        playerSelection = playRound(e.target.value)
+        console.log(playerSelection)
     })
 })
 
-function choice() {
-    document.getElementById("").value 
-}
 
 // returns a random value in the array
 function computerPlay(){
@@ -39,16 +18,15 @@ function computerPlay(){
     
 } 
 
-
-
 let result;
 let computerScore = 0;
 let playerScore = 0;
-
+// let computerSelection = computerPlay();
 function playRound(playerSelection) {
-    // let playerSelection = e.target.value
+    // let playerSelection;
+    
     let computerSelection = computerPlay();
-    while (playerScore < 5 || computerScore < 5) {
+    let result = ""
         if ((playerSelection == "rock" && computerSelection == "scissors") ||
             (playerSelection == "scissors" && computerSelection == "paper") ||
             (playerSelection == "paper" && computerSelection == "rock")) {
@@ -59,29 +37,19 @@ function playRound(playerSelection) {
         } else {
             computerScore += 1;
             result = ("You lose this round!");
+            
+            if (computerScore == 5) {
+                result = ("Computer Wins")
+            }
         }
         return result;
     }
-}
 
-
-// function game(){
-
-//     for (let i = 0; i < 6; i++){
-//         if (playerScore == 5) {
-//             console.log("You're the winner!");
-//         } else if(computerScore == 5){
-//             console.log("Computer wins!");
-//         }
-//         playRound();
-//     }
-
-//     }
 
 playRound()
 
 
-// game();
+
 console.log(result);
 console.log(playerScore);
 console.log(computerScore);
