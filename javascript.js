@@ -11,11 +11,14 @@ buttons.forEach(button => {
     })
 })
 
-// function endGame() {
-//     if (playerScore == 5 || computerScore == 5) {
-//         document.querySelectorAll('button').disabled = true;
-//     }
-// }
+
+
+function endGame() {
+    buttons.disabled = true;
+    if (buttons.disabled = true) {
+        console.log("buttons disabled")
+    }
+}
 
 // returns a random value in the array
 function computerPlay(){
@@ -48,6 +51,7 @@ function playRound(playerSelection) {
             } else if (playerScore == 5) {
                 result = ("You won the game!");
                 endGame();
+                
 
             }
         }
