@@ -55,7 +55,8 @@ function playRound(playerSelection) {
 
             }
         }
-        return result;
+    document.getElementById('results').innerHTML = result
+    return result;
     }
 
 
